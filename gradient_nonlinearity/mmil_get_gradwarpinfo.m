@@ -4,7 +4,9 @@ function [gradwarpinfo,errmsg] = mmil_get_gradwarpinfo(dcminfo)
 % Created:  03/19/19 by Feng Xue
 % Prev Mod: 10/31/22 by Don Hagler
 % Prev Mod: 11/14/24 by Don Hagler
-% Last Mod: 12/09/24 by Don Hagler
+% Prev Mod: 12/09/24 by Don Hagler
+% Prev Mod: 01/30/25 by Don Hagler
+% Last Mod: 08/27/25 by Don Hagler
 %
 
 % based on Josh Kuperman's QD_get_gradwarpinfo
@@ -175,7 +177,7 @@ elseif ~isempty(regexpi(Manufacturer,'ge medical'))
       gradwarpinfo.gwtype = 9;
       return;
   end
-  if ismember(deblank(lower(ManufacturersModelName)),{'discovery mr750w'})
+  if ismember(deblank(lower(ManufacturersModelName)),{'discovery mr750w', 'signa pet/mr', 'signa architect'})
       gradwarpinfo.gwtype = 10;
       return;
   end
